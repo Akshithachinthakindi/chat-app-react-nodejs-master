@@ -10,11 +10,11 @@ require("dotenv").config();
 app.use(cors());
 app.use(express.json());
 
+// Bmjbeel0JV5mxuT7
+// chinthakindiakshitha
+
 mongoose
-  .connect(process.env.MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect("mongodb+srv://chinthakindiakshitha:Bmjbeel0JV5mxuT7@snapkin-db.m4hoexz.mongodb.net/?retryWrites=true&w=majority&appName=snapkin-db")
   .then(() => {
     console.log("DB Connetion Successfull");
   })
