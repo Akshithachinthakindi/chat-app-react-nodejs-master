@@ -6,15 +6,15 @@ const messageRoutes = require("./routes/messages");
 const app = express();
 const socket = require("socket.io");
 require("dotenv").config();
-
 app.use(cors());
 app.use(express.json());
 
-// Bmjbeel0JV5mxuT7
-// chinthakindiakshitha
+const {MONGO_USERNAME, MONGO_PASSWORD} = process.env
+const MONGOSE_URI = `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@snapkin-db.m4hoexz.mongodb.net/?retryWrites=true&w=majority&
+appName=snapkin-db` 
 
 mongoose
-  .connect("mongodb+srv://chinthakindiakshitha:Bmjbeel0JV5mxuT7@snapkin-db.m4hoexz.mongodb.net/?retryWrites=true&w=majority&appName=snapkin-db")
+  .connect(MONGOSE_URI)
   .then(() => {
     console.log("DB Connetion Successfull");
   })
